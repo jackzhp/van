@@ -15,7 +15,7 @@ const createElement = (jsxTag, { children, style, ref, ...props }) => {
             }
             // Add Event Listener
             if (typeof value === "function" && key.startsWith("on")) {
-                ele.addEventListener(key.replace("on", "").toLowerCase(), value);
+                ele.addEventListener(key.slice(2), value);
                 continue;
             }
 
