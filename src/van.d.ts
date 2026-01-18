@@ -34,9 +34,11 @@ type Tags = Readonly<Record<string, TagFunc<Element>>> & {
 
 declare function state<T>(): State<T>
 declare function state<T>(initVal: T): State<T>
+declare function is_State(v:any) => boolean;
 
 export interface Van {
   readonly state: typeof state
+  readonly is_State: typeof is_State
   readonly derive: <T>(f: () => T) => State<T>
   readonly add: (dom: Element | DocumentFragment, ...children: readonly ChildDom[]) => Element
   readonly tags: Tags & ((namespaceURI: string) => Readonly<Record<string, TagFunc<Element>>>)
