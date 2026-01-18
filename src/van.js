@@ -52,7 +52,7 @@ let stateProto = {
     }
   },
 }
-
+export const is_State = (v) => protoOf(v) === stateProto;
 let state = initVal => ({
   __proto__: stateProto,
   rawVal: initVal,
